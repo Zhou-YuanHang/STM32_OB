@@ -1,0 +1,11 @@
+{
+	"id": "components_free",
+	"name": "Components Free",
+	"version": "3.1.260605",
+	"minAppVersion": "0.14.0",
+	"description": "create component for your obsidian (activation-free)",
+	"author": "vran",
+	"authorUrl": "https://github.com/vran-dev",
+	"isDesktopOnly": false,
+	"fundingUrl": "https://www.buymeacoffee.com/vran"
+}

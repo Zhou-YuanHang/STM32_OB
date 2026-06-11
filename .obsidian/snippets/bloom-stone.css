@@ -1,0 +1,939 @@
+/* @settings
+name: Bloom Stone
+id: bloom-stone
+settings:
+  - id: bloom-accent
+    title: Accent Color
+    title.zh: 强调色
+    type: variable-themed-color
+    format: oklch
+    default-light: oklch(58% 0.06 40)
+    default-dark: oklch(62% 0.07 40)
+  - id: bloom-bg-gradient
+    title: Background Gradient
+    title.zh: 背景渐变
+    type: class-toggle
+    default: true
+  - id: bloom-content-card
+    title: Content Card Style
+    title.zh: 内容卡片样式
+    description: Wrap content in a rounded card with shadow
+    description.zh: 将内容包裹在带阴影的圆角卡片中
+    type: class-toggle
+    default: true
+  - id: bloom-code-mac-dots
+    title: Code Block Mac Dots
+    title.zh: 代码块 Mac 圆点
+    type: class-toggle
+    default: true
+  - id: bloom-heading-underline
+    title: Heading Underline Decoration (H1-H4)
+    title.zh: 标题下划线装饰 (H1-H4)
+    type: class-toggle
+    default: true
+  - id: bloom-content-width
+    title: Content Area Width
+    title.zh: 内容区域宽度
+    description: Maximum line width for content area
+    description.zh: 内容区域最大行宽
+    type: variable-number-slider
+    default: 860
+    min: 420
+    max: 2400
+    format: px
+    step: 1
+*/
+
+/* ============================
+   BLOOM STONE — Obsidian Theme
+   Converted from Typora original
+   ============================ */
+
+/* --- Font Face (MiSans) --- */
+@font-face {
+  font-family: "MiSans";
+  src: url("./bloom/fonts/MiSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("./bloom/fonts/MiSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("./bloom/fonts/MiSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================
+   CSS Variables — Bloom Stone Palette
+   Mapped to Obsidian's variable system
+   ============================ */
+body {
+  /* --- Bloom accent --- */
+  --bloom-accent: oklch(50% 0.06 40);
+  --bloom-accent-rgb: 204, 88, 77;
+  --bloom-accent-hover: color-mix(in oklch, var(--bloom-accent), black 8%);
+  --bloom-accent-active: color-mix(in oklch, var(--bloom-accent), black 15%);
+  --bloom-accent-soft: color-mix(in oklch, var(--bloom-accent), transparent 88%);
+
+  /* --- Semantic colors --- */
+  --bloom-success: oklch(70% 0.08 150);
+  --bloom-warning: oklch(75% 0.08 75);
+  --bloom-error: oklch(60% 0.1 25);
+  --bloom-info: oklch(62% 0.08 250);
+  --bloom-important: oklch(65% 0.16 280);
+
+  /* --- Code token colors --- */
+  --bloom-code-token-keyword: oklch(55% 0.12 40);
+  --bloom-code-token-string: oklch(60% 0.12 145);
+  --bloom-code-token-number: oklch(62% 0.12 75);
+  --bloom-code-token-blue: oklch(58% 0.12 250);
+  --bloom-code-muted-rgb: 120, 120, 120;
+
+  /* --- Code dots (macOS style) --- */
+  --bloom-code-dot-red: oklch(65% 0.12 25);
+  --bloom-code-dot-yellow: oklch(78% 0.12 85);
+  --bloom-code-dot-green: oklch(72% 0.12 145);
+
+  /* --- Fonts --- */
+  --bloom-font-sans: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --bloom-font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* --- Spacing (8px base) --- */
+  --bloom-space-unit: 8px;
+  --bloom-space-2xs: calc(var(--bloom-space-unit) * 0.5);
+  --bloom-space-xs: calc(var(--bloom-space-unit) * 1);
+  --bloom-space-sm: calc(var(--bloom-space-unit) * 1.5);
+  --bloom-space-md: calc(var(--bloom-space-unit) * 2);
+  --bloom-space-lg: calc(var(--bloom-space-unit) * 3);
+  --bloom-space-xl: calc(var(--bloom-space-unit) * 4);
+  --bloom-space-2xl: calc(var(--bloom-space-unit) * 6);
+  --bloom-space-3xl: calc(var(--bloom-space-unit) * 8);
+
+  /* --- Shadows --- */
+  --bloom-shadow-sm: 0 2px 8px color-mix(in oklch, var(--text-muted), transparent 92%);
+  --bloom-shadow: 0 10px 30px color-mix(in oklch, var(--text-muted), transparent 90%);
+  --bloom-shadow-lg: 0 24px 60px color-mix(in oklch, var(--text-muted), transparent 86%);
+
+  /* ========== Map to Obsidian variables ========== */
+  --file-line-width: var(--bloom-content-width, 860px);
+  --font-text: var(--bloom-font-sans);
+  --font-monospace: var(--bloom-font-mono);
+  /* Override text/background with stone palette (light) */
+  --text-normal: oklch(25% 0.02 40);
+  --text-muted: oklch(45% 0.02 40);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+  --text-on-accent: oklch(96% 0.01 60);
+  --text-accent: var(--bloom-accent);
+
+  --background-primary: oklch(96% 0.01 60);
+  --background-primary-alt: oklch(94% 0.01 60);
+  --background-secondary: oklch(94% 0.01 60);
+  --background-secondary-alt: oklch(91% 0.01 60);
+  --background-modifier-border: color-mix(in oklch, var(--text-normal), transparent 90%);
+  --background-modifier-hover: var(--bloom-accent-soft);
+  --background-modifier-active-hover: var(--bloom-accent-soft);
+  --background-modifier-form-field: var(--background-primary-alt);
+  --background-modifier-message: var(--background-secondary);
+
+  /* Selection */
+  --text-selection: var(--bloom-accent-soft);
+  --text-highlight-bg: color-mix(in oklch, var(--bloom-accent), transparent 80%);
+
+  /* Callout colors */
+  --callout-default: var(--bloom-accent-rgb);
+  --callout-info: 91, 156, 179;
+  --callout-tip: 87, 158, 128;
+  --callout-success: 87, 158, 128;
+  --callout-warning: 203, 166, 88;
+  --callout-important: 168, 130, 200;
+  --callout-error: 184, 64, 102;
+  --callout-question: 203, 166, 88;
+
+  /* Border radius */
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 14px;
+  --radius-xl: 16px;
+
+  /* Other */
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+  --ribbon-background: var(--background-primary);
+  --side-dock-bg: var(--background-primary);
+  --side-dock-collapse-bg: var(--background-secondary);
+  --nav-item-color: var(--text-normal);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-background-hover: var(--bloom-accent-soft);
+  --nav-item-color-active: var(--bloom-accent);
+  --nav-item-background-active: var(--bloom-accent-soft);
+}
+
+/* ============================
+   Body / Background Gradient
+   ============================ */
+body {
+  font-family: var(--bloom-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.bloom-bg-gradient {
+  background: radial-gradient(1400px circle at 16% 10%, rgba(var(--bloom-accent-rgb), 0.08), transparent 36%),
+    linear-gradient(150deg, rgba(var(--bloom-accent-rgb), 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 340px),
+    var(--background-primary);
+}
+
+body.bloom-bg-gradient .workspace {
+  background: transparent;
+}
+
+/* ============================
+   Content Area — Card Style (decoration only, width handled by --file-line-width)
+   ============================ */
+body.bloom-content-card .markdown-preview-view {
+  margin: 32px auto;
+  padding: var(--bloom-space-2xl) var(--bloom-space-xl) var(--bloom-space-3xl);
+  background: linear-gradient(180deg, var(--bloom-accent-soft), transparent 460px),
+    linear-gradient(120deg, oklch(100% 0 0 / 70%), transparent 70%);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 24px;
+  box-shadow: var(--bloom-shadow-lg);
+}
+
+/* Card style for live preview — box-sizing to avoid layout breakage */
+body.bloom-content-card .markdown-source-view.mod-cm6 .cm-sizer {
+  box-sizing: border-box;
+  max-width: calc(var(--file-line-width) + var(--bloom-space-xl) * 2) !important;
+  margin: 32px auto !important;
+  padding: var(--bloom-space-2xl) var(--bloom-space-xl) var(--bloom-space-3xl);
+  background: linear-gradient(180deg, var(--bloom-accent-soft), transparent 460px),
+    linear-gradient(120deg, oklch(100% 0 0 / 70%), transparent 70%);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 24px;
+  box-shadow: var(--bloom-shadow-lg);
+}
+
+/* ============================
+   Selection
+   ============================ */
+::selection {
+  background: color-mix(in oklch, var(--bloom-accent), transparent 80%);
+}
+
+/* ============================
+   Typography Base
+   ============================ */
+.markdown-preview-view,
+.markdown-source-view {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.markdown-preview-view p,
+.markdown-source-view .cm-line {
+  margin: 1.1em 0;
+}
+
+/* ============================
+   Links
+   ============================ */
+.markdown-preview-view a,
+.markdown-source-view .cm-hmd-internal-link a,
+a.external-link {
+  color: var(--bloom-accent);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.markdown-preview-view a:hover,
+.markdown-source-view .cm-hmd-internal-link a:hover,
+a.external-link:hover {
+  border-bottom-color: var(--bloom-accent);
+  transform: translateY(-0.5px);
+}
+
+/* ============================
+   Headings
+   ============================ */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.HyperMD-header .cm-header {
+  color: var(--text-normal);
+  font-weight: 800;
+  line-height: 1.25;
+  margin: var(--bloom-space-2xl) 0 var(--bloom-space-md);
+  letter-spacing: -0.015em;
+  position: relative;
+}
+
+.markdown-rendered h1,
+.HyperMD-header-1 .cm-header {
+  font-size: 2.25em;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.3em;
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2 .cm-header {
+  font-size: 1.68em;
+  padding-bottom: 0.24em;
+  color: rgba(71, 65, 62, 0.9);
+}
+
+.markdown-rendered h3,
+.HyperMD-header-3 .cm-header {
+  font-size: 1.32em;
+  color: rgba(71, 65, 62, 0.86);
+}
+
+.markdown-rendered h4,
+.HyperMD-header-4 .cm-header {
+  font-size: 1.15em;
+  color: rgba(71, 65, 62, 0.8);
+}
+
+/* Heading bottom border */
+.markdown-rendered h1 {
+  border-bottom: 1px solid rgba(var(--bloom-accent-rgb), 0.3);
+}
+
+.markdown-rendered h2 {
+  border-bottom: 1px solid rgba(var(--bloom-accent-rgb), 0.22);
+}
+
+/* Heading underline decoration (gradient line under headings) */
+body.bloom-heading-underline .markdown-rendered h1::after,
+body.bloom-heading-underline .markdown-rendered h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5em;
+  width: 76px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(var(--bloom-accent-rgb), 0.45), transparent);
+  border-radius: 999px;
+}
+
+body.bloom-heading-underline .markdown-rendered h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.38em;
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(var(--bloom-accent-rgb), 0.32), transparent);
+  border-radius: 999px;
+}
+
+body.bloom-heading-underline .markdown-rendered h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.34em;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(var(--bloom-accent-rgb), 0.22), transparent);
+  border-radius: 999px;
+}
+
+/* ============================
+   Horizontal Rule
+   ============================ */
+.markdown-rendered hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--background-modifier-border), transparent);
+  margin: var(--bloom-space-3xl) 0;
+}
+
+/* ============================
+   Blockquote
+   ============================ */
+.markdown-rendered blockquote {
+  margin: var(--bloom-space-xl) 0;
+  padding: var(--bloom-space-lg) var(--bloom-space-xl);
+  background: rgba(var(--bloom-accent-rgb), 0.08);
+  border-left: 4px solid var(--bloom-accent);
+  border-radius: 14px;
+  color: var(--text-normal);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(var(--bloom-accent-rgb), 0.08);
+  overflow: hidden;
+}
+
+.markdown-rendered blockquote p:first-child {
+  margin-top: 0;
+}
+
+.markdown-rendered blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
+   Callouts (Obsidian native)
+   ============================ */
+.callout {
+  border-radius: 12px;
+  padding: 1em 1em 1em 1.2em;
+  margin: 1.5em 0;
+  border: 1px solid rgba(var(--callout-color), 0.35);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.callout:hover {
+  border-color: rgba(var(--callout-color), 0.7);
+}
+
+.callout-title {
+  gap: 8px;
+}
+
+.callout-title-inner {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+}
+
+.callout-content {
+  margin-top: 0.5em;
+}
+
+.callout-content p {
+  margin: 0.4em 0;
+}
+
+/* Callout variants - accent left border */
+.callout[data-callout="note"] {
+  border-left: 4px solid rgb(var(--callout-info));
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  border-left: 4px solid rgb(var(--callout-important));
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  border-left: 4px solid rgb(var(--callout-warning));
+}
+
+.callout[data-callout="error"],
+.callout[data-callout="bug"],
+.callout[data-callout="fail"] {
+  border-left: 4px solid rgb(var(--callout-error));
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  border-left: 4px solid rgb(var(--callout-success));
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  border-left: 4px solid rgb(var(--callout-question));
+}
+
+/* ============================
+   Lists
+   ============================ */
+.markdown-rendered ul,
+.markdown-rendered ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.markdown-rendered li {
+  margin: 0.5em 0;
+}
+
+.markdown-rendered li > ul,
+.markdown-rendered li > ol {
+  margin: 0.4em 0;
+}
+
+.markdown-rendered ul li::marker {
+  color: rgba(var(--bloom-accent-rgb), 0.72);
+}
+
+.markdown-rendered ol li::marker {
+  color: rgba(var(--bloom-accent-rgb), 0.72);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================
+   Task Lists
+   ============================ */
+.task-list-item-checkbox {
+  accent-color: var(--bloom-accent);
+}
+
+/* ============================
+   Tables
+   ============================ */
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 2em 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.markdown-rendered th,
+.markdown-rendered td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-right: none;
+  border-left: none;
+}
+
+.markdown-rendered th {
+  text-align: left;
+  background: var(--background-secondary);
+  font-weight: 600;
+}
+
+.markdown-rendered tr:last-child td {
+  border-bottom: 0;
+}
+
+.markdown-rendered tr:nth-child(even) td {
+  background: rgba(var(--bloom-accent-rgb), 0.02);
+}
+
+/* Table editor (Live Preview) */
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: 0.75em 1em;
+}
+
+/* ============================
+   Inline Code
+   ============================ */
+.markdown-rendered code,
+.cm-s-obsidian span.cm-inline-code {
+  font-family: var(--bloom-font-mono);
+  font-size: 0.88em;
+  padding: 0.2em 0.45em;
+  border-radius: 7px;
+  background: rgba(var(--bloom-accent-rgb), 0.14);
+  color: var(--bloom-accent);
+  font-weight: 600;
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.32);
+}
+
+/* ============================
+   Fenced Code Blocks
+   ============================ */
+.markdown-rendered pre {
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.18);
+  border-radius: 16px;
+  padding: 1.4em;
+  margin: 2em 0;
+  overflow: auto;
+  box-shadow: var(--bloom-shadow);
+  font-family: var(--bloom-font-mono);
+  font-size: 14.5px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.markdown-rendered pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--text-normal);
+  font-weight: normal;
+}
+
+.HyperMD-codeblock {
+  line-height: 1.6;
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--background-secondary);
+}
+
+.HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  min-height: 32px;
+}
+
+.HyperMD-codeblock.HyperMD-codeblock-end.HyperMD-codeblock-end-bg {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Mac-style Window Controls Dots */
+body.bloom-code-mac-dots .HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bloom-code-dot-red);
+  box-shadow: 18px 0 0 var(--bloom-code-dot-yellow), 36px 0 0 var(--bloom-code-dot-green);
+  z-index: 2;
+}
+
+body.bloom-code-mac-dots .HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg {
+  padding-top: 28px !important;
+}
+
+body.bloom-code-mac-dots .markdown-rendered pre::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bloom-code-dot-red);
+  box-shadow: 18px 0 0 var(--bloom-code-dot-yellow), 36px 0 0 var(--bloom-code-dot-green);
+  z-index: 2;
+}
+
+body.bloom-code-mac-dots .markdown-rendered pre {
+  padding-top: 3.2em;
+}
+
+/* Code language label (in reading view) */
+.markdown-rendered pre code.language-label {
+  position: absolute;
+  top: 14px;
+  left: 60px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  text-transform: uppercase;
+}
+
+/* Code block flair (copy button area) */
+.markdown-source-view.mod-cm6 .code-block-flair {
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.markdown-source-view.mod-cm6 .code-block-flair:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================
+   Images
+   ============================ */
+.markdown-rendered img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: var(--bloom-shadow);
+  display: block;
+  margin: 1.5em auto;
+}
+
+/* ============================
+   Highlight / Mark
+   ============================ */
+.markdown-rendered mark,
+.cm-s-obsidian .cm-highlight {
+  background: linear-gradient(120deg, rgba(var(--bloom-accent-rgb), 0.25), rgba(var(--bloom-accent-rgb), 0.12));
+  color: inherit;
+  padding: 0.12em 0.26em;
+  border-radius: 9px;
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.32);
+  box-shadow: 0 10px 26px rgba(var(--bloom-accent-rgb), 0.18);
+}
+
+.cm-s-obsidian span.cm-formatting-highlight {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ============================
+   Underline
+   ============================ */
+.markdown-rendered u {
+  text-decoration: none;
+  background-image: linear-gradient(120deg, rgba(var(--bloom-accent-rgb), 0.5), rgba(var(--bloom-accent-rgb), 0.18));
+  background-repeat: no-repeat;
+  background-size: 100% 0.16em;
+  background-position: 0 90%;
+  border-radius: 4px;
+  padding-bottom: 2px;
+}
+
+/* ============================
+   KBD (Keyboard)
+   ============================ */
+.markdown-rendered kbd {
+  font-family: var(--bloom-font-mono);
+  font-size: 0.85em;
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--background-modifier-border);
+  border-bottom-width: 3px;
+  border-radius: 8px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  margin: 0 0.2em;
+}
+
+/* ============================
+   Footnotes
+   ============================ */
+.footnote-ref {
+  background: rgba(var(--bloom-accent-rgb), 0.16);
+  color: var(--bloom-accent);
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.28);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+}
+
+.footnote-ref a {
+  color: var(--bloom-accent);
+}
+
+.markdown-preview-view .footnotes {
+  border-top: 1px solid var(--background-modifier-border);
+  margin-top: 3em;
+  padding: 1.2em 1.4em;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  background: rgba(var(--bloom-accent-rgb), 0.06);
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.18);
+  border-radius: 12px;
+  box-shadow: var(--bloom-shadow-sm);
+}
+
+.markdown-preview-view .footnotes a {
+  color: var(--bloom-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--bloom-accent-rgb), 0.3);
+}
+
+.markdown-preview-view .footnotes a:hover {
+  border-bottom-color: rgba(var(--bloom-accent-rgb), 0.6);
+}
+
+/* ============================
+   Math
+   ============================ */
+.math-block mjx-container,
+.math-block {
+  margin: var(--bloom-space-xl) 0;
+  padding: var(--bloom-space-md);
+  background: var(--background-secondary);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+/* ============================
+   Sidebar / File Tree
+   ============================ */
+.nav-files-container {
+  font-family: var(--bloom-font-sans);
+  padding: 8px;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: var(--bloom-accent-soft);
+}
+
+.nav-file-title.is-active {
+  background: var(--bloom-accent-soft);
+  border-left: 3px solid var(--bloom-accent);
+}
+
+.nav-folder-title.is-active {
+  color: var(--bloom-accent);
+}
+
+/* ============================
+   Pane / Tab styling
+   ============================ */
+.workspace-tab-header-container {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.workspace-tab-header.is-active {
+  background: var(--background-primary);
+  color: var(--bloom-accent);
+}
+
+/* ============================
+   Minimal transitions everywhere
+   ============================ */
+* {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================
+   Tags
+   ============================ */
+.tag {
+  background: var(--bloom-accent-soft);
+  color: var(--bloom-accent);
+  border-radius: 999px;
+  padding: 0.1em 0.6em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid rgba(var(--bloom-accent-rgb), 0.2);
+}
+
+.tag:hover {
+  background: rgba(var(--bloom-accent-rgb), 0.2);
+  text-decoration: none;
+}
+
+/* ============================
+   Frontmatter (Metadata)
+   ============================ */
+.metadata-container {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  padding: 1em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+}
+
+/* ============================
+   Scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--text-muted), transparent 80%);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--text-muted), transparent 60%);
+}
+
+/* ============================
+   Graph View
+   ============================ */
+.graph-controls {
+  border-radius: 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* ============================
+   Search
+   ============================ */
+.search-result-file-matched-text {
+  background: var(--bloom-accent-soft);
+  color: var(--text-normal);
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+.search-result-file-title {
+  font-weight: 600;
+}
+
+/* ============================
+   Dark Theme Overrides
+   ============================ */
+.theme-dark {
+  --bloom-accent: oklch(62% 0.07 40);
+  --bloom-accent-rgb: 177, 164, 158;
+
+  --text-normal: oklch(88% 0.01 60);
+  --text-muted: oklch(72% 0.01 60);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+
+  --background-primary: oklch(22% 0.01 40);
+  --background-primary-alt: oklch(26% 0.01 40);
+  --background-secondary: oklch(26% 0.01 40);
+  --background-secondary-alt: oklch(30% 0.01 40);
+  --background-modifier-border: oklch(40% 0.01 40);
+  --background-modifier-hover: color-mix(in oklch, var(--bloom-accent), transparent 85%);
+  --background-modifier-active-hover: color-mix(in oklch, var(--bloom-accent), transparent 80%);
+  --background-modifier-form-field: var(--background-primary-alt);
+  --background-modifier-message: var(--background-secondary);
+
+  --text-selection: color-mix(in oklch, var(--bloom-accent), transparent 80%);
+
+  --bloom-shadow-sm: 0 2px 8px color-mix(in oklch, black, transparent 80%);
+  --bloom-shadow: 0 10px 30px color-mix(in oklch, black, transparent 76%);
+  --bloom-shadow-lg: 0 24px 60px color-mix(in oklch, black, transparent 72%);
+}
+
+.theme-dark .markdown-rendered h2 {
+  color: rgba(220, 220, 220, 0.9);
+}
+
+.theme-dark .markdown-rendered h3 {
+  color: rgba(220, 220, 220, 0.86);
+}
+
+.theme-dark .markdown-rendered h4 {
+  color: rgba(220, 220, 220, 0.8);
+}
+
+body.theme-dark.bloom-bg-gradient {
+  background: radial-gradient(1400px circle at 16% 10%, rgba(var(--bloom-accent-rgb), 0.15), transparent 36%),
+    linear-gradient(150deg, rgba(var(--bloom-accent-rgb), 0.08), transparent 48%),
+    var(--background-primary);
+}

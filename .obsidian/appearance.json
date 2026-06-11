@@ -1,0 +1,9 @@
+{
+  "cssTheme": "Blue Topaz",
+  "baseFontSizeAction": true,
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "bloom-stone"
+  ],
+  "textFontFamily": "Microsoft YaHei"
+}

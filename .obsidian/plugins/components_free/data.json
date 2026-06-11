@@ -1,0 +1,18 @@
+{
+  "createComponentSilent": false,
+  "receiveBetaVersion": false,
+  "folder": "components/view",
+  "scriptFolder": "components/script",
+  "enableDebug": false,
+  "debugLogOutputFolder": "components/logs",
+  "aiBaseFolder": "",
+  "homepage": {
+    "path": null,
+    "mobilePath": null,
+    "showOnStartup": true,
+    "showOnEmpty": true,
+    "showOnNewEmptyTab": false
+  },
+  "aiProviders": [],
+  "aiDefaultModels": {}
+}

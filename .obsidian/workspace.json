@@ -4,41 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d1e645e2de7adab6",
+        "id": "d88798b13c5ae14f",
         "type": "tabs",
         "children": [
           {
-            "id": "2eaa3f410baa9620",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "STM32F103x8B数据手册（中文）.pdf",
-                "page": 21,
-                "left": -143,
-                "top": 697,
-                "zoom": 1.5
-              },
-              "icon": "lucide-file-text",
-              "title": "STM32F103x8B数据手册（中文）"
-            }
-          },
-          {
-            "id": "bd20cd3012abe701",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "STM32_Obsidian/概念/启动文件.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "启动文件"
-            }
-          },
-          {
-            "id": "2cedebbcc6a7d8d4",
+            "id": "3aa39b36028349eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -52,31 +22,31 @@
             }
           },
           {
-            "id": "1fdb091a7dbba15e",
+            "id": "d4c9227e5236fb55",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STM32_Obsidian/概念/寄存器与存储器映射.md",
+                "file": "STM32_Obsidian/概念/1、大总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "寄存器与存储器映射"
+              "title": "1、大总结"
             }
           },
           {
-            "id": "8c1e6a3f8c161c9e",
+            "id": "4eee0645cf8918b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STM32_Obsidian/概念/system_stm32f10x系统文件.md",
+                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "system_stm32f10x系统文件"
+              "title": "使能GPIO时钟为什么只需配置APB2"
             }
           }
         ],
@@ -153,13 +123,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
+                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "新建模板工程 的大纲"
+              "title": "使能GPIO时钟为什么只需配置APB2 的大纲"
             }
           },
           {
@@ -168,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
+                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +148,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "新建模板工程 的反向链接列表"
+              "title": "使能GPIO时钟为什么只需配置APB2 的反向链接列表"
             }
           },
           {
@@ -187,12 +157,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
+                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "新建模板工程 的出链列表"
+              "title": "使能GPIO时钟为什么只需配置APB2 的出链列表"
             }
           },
           {
@@ -230,13 +200,14 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "STM32_Obsidian/1.新建模板工程/新建模板工程.md"
+                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md"
               },
               "icon": "lucide-file-signature",
               "title": "脚注"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -253,31 +224,35 @@
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
       "components_free:AI 对话（新标签页）": false,
-      "oz-clear-unused-images:Clear Unused Images": false,
-      "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false
+      "oz-clear-unused-images:Clear Unused Images": false
     }
   },
-  "active": "2cedebbcc6a7d8d4",
+  "active": "4eee0645cf8918b5",
   "lastOpenFiles": [
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/TempalteProj.uvguix.25313.25313.tmp",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/startup_stm32f10x_md._ia",
+    "STM32_Obsidian/概念/1、大总结.md",
+    "使能GPIO时钟为什么只需配置APB2,md.md",
+    "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
+    "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
+    "STM32_Obsidian/概念/STM32总线总结.md",
+    "STM32_Obsidian/概念/启动文件.md",
+    "STM32_Obsidian/概念/寄存器与存储器映射.md",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/system_stm32f10x.__i",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/main.__i",
-    "STM32_Obsidian/概念/寄存器与存储器映射.md",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/TempalteProj.uvguix.25313.25313.tmp",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/TempalteProj.uvprojx.25313.tmp",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/startup_stm32f10x_md._ia",
+    "STM32_Obsidian/概念/寄存器-寄存器映射-存储器映射-内存.md",
+    "STM32_Obsidian/概念/system_stm32f10x系统文件.md",
+    "STM32_Obsidian/概念/assets/Pasted image 20260615233020.png",
+    "STM32_Obsidian/概念/assets/Pasted image 20260615230935.png",
+    "STM32_Obsidian/概念/assets",
     "STM32_Obsidian/概念/core_cm3内核支持文件.md",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj_Target 1.dep",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj.axf",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj.htm",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/Listings/TempalteProj.map",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj.lnp",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/system_stm32f10x.o",
-    "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
-    "STM32_Obsidian/概念/system_stm32f10x系统文件.md",
     "STM32_Obsidian/概念/中断向量表.md",
     "STM32_Obsidian/概念/stm32f10x.h头文件.md",
-    "STM32_Obsidian/概念/启动文件.md",
-    "STM32_Obsidian/概念/STM32总线总结.md",
     "Ob语法.md",
     "Readme.md",
     "待办清单.md",

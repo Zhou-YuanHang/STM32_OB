@@ -1,5 +1,5 @@
 Dependencies for Project 'TempalteProj', Target 'Target 1': (DO NOT MODIFY !)
-F (.\User\main.c)(0x6A2AE623)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Startup-I.\RTE\_Target_1-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x6A3022EA)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Startup-I.\RTE\_Target_1-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Startup\stm32f10x.h)(0x4D783CB4)
 I (.\Startup\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)

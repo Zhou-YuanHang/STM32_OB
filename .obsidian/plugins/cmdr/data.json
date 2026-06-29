@@ -2,22 +2,8 @@
   "confirmDeletion": true,
   "showAddCommand": true,
   "debug": false,
-  "editorMenu": [
-    {
-      "id": "markdown-prettifier:markdown-prettifier-run",
-      "icon": "lucide-app-window-mac",
-      "name": "Markdown prettifier: Run",
-      "mode": "any"
-    }
-  ],
-  "fileMenu": [
-    {
-      "id": "open-with-default-app:show",
-      "icon": "lucide-files",
-      "name": "在系统资源管理器中显示",
-      "mode": "any"
-    }
-  ],
+  "editorMenu": [],
+  "fileMenu": [],
   "leftRibbon": [],
   "rightRibbon": [],
   "titleBar": [],

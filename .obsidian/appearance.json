@@ -1,9 +1,12 @@
 {
-  "cssTheme": "Blue Topaz",
+  "cssTheme": "NXL",
   "baseFontSizeAction": true,
   "baseFontSize": 16,
   "enabledCssSnippets": [
     "bloom-stone"
   ],
-  "textFontFamily": "Microsoft YaHei"
+  "accentColor": "",
+  "interfaceFontFamily": "",
+  "textFontFamily": "霞鹜文楷",
+  "nativeMenus": false
 }

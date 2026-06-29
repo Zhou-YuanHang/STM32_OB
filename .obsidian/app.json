@@ -1,7 +1,6 @@
 {
   "attachmentFolderPath": "./assets",
   "newLinkFormat": "relative",
-  "alwaysUpdateLinks": true,
   "showLineNumber": true,
   "spellcheck": false
 }

@@ -1,0 +1,32 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Q&A",
+      "path": "疑问收集/Q&A.md"
+    },
+    {
+      "basename": "寄存器与存储器映射",
+      "path": "STM32_Obsidian/概念/寄存器与存储器映射.md"
+    },
+    {
+      "basename": "新建模板工程",
+      "path": "STM32_Obsidian/1.新建模板工程/新建模板工程.md"
+    },
+    {
+      "basename": "1、大总结",
+      "path": "STM32_Obsidian/概念/1、大总结.md"
+    },
+    {
+      "basename": "启动文件",
+      "path": "STM32_Obsidian/概念/启动文件.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}

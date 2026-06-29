@@ -28,7 +28,7 @@
   "blue-topaz-theme@@h1-toggle-short-underline": false,
   "blue-topaz-theme@@header-1-background": false,
   "blue-topaz-theme@@h1-text-align-settings": "h1-text-align-center",
-  "blue-topaz-theme@@text-indentation-two-em": true,
+  "blue-topaz-theme@@text-indentation-two-em": false,
   "blue-topaz-theme@@inline-title-toggle-underline": false,
   "blue-topaz-theme@@title-justify-start": false,
   "blue-topaz-theme@@dark-background-file": true,
@@ -52,13 +52,13 @@
   "blue-topaz-theme@@table-width": "table-width-100",
   "blue-topaz-theme@@toggle-table-transition": false,
   "blue-topaz-theme@@table-format-options": "no-wrapped-table-cell",
+  "bloom-stone@@bloom-content-width": 860,
   "bloom-stone@@bloom-heading-underline": true,
   "bloom-stone@@bloom-code-mac-dots": true,
   "bloom-stone@@bloom-content-card": true,
   "bloom-stone@@bloom-bg-gradient": true,
   "mytheme-bloom@@content-card": true,
-  "blue-topaz-theme@@toggle-left-aligned-content": false,
-  "blue-topaz-theme@@folder-style-change-options-colorful-subfolder": "folder-colorful-four",
-  "blue-topaz-theme@@file-bg-shape-option": "file-shape-default",
-  "bloom-stone@@bloom-content-width": 860
+  "nxl-theme@@paragraph-indent": true,
+  "nxl-theme@@nxl-image-center": true,
+  "nxl-theme@@file-line-width": 1200
 }

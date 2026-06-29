@@ -1,0 +1,1132 @@
+/* @settings
+name: 🐚 NXL Theme
+id: nxl-theme
+settings:
+  -
+    id: palette-settings
+    title: 🎨 配色方案
+    title.zh: 🎨 配色方案
+    description: 选择一套配色风格
+    description.zh: 选择一套配色风格
+    type: class-select
+    allowEmpty: false
+    default: nxl-palette-ink
+    options:
+      -
+        label: Ink（Blue Topaz 风格）
+        value: nxl-palette-ink
+      -
+        label: Orange Heart（橙红暖色）
+        value: nxl-palette-orange-heart
+  -
+    id: typograph-settings
+    title: 📝 排版设置
+    title.zh: 📝 排版设置
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: font-settings
+    title: 字体设置
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: font-family-interface
+    title: 界面字体
+    description: 侧边栏、标签栏等界面元素的字体（需重启生效）
+    type: variable-text
+    default: '"MiSans", "PingFang SC", "Microsoft YaHei", sans-serif'
+  -
+    id: font-family-text
+    title: 正文字体
+    description: 编辑器与阅读模式的正文（需重启生效）
+    type: variable-text
+    default: '"MiSans", "PingFang SC", "Microsoft YaHei", sans-serif'
+  -
+    id: font-family-mono
+    title: 代码字体
+    description: 代码块与内联代码的字体
+    type: variable-text
+    default: 'ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace'
+  -
+    id: font-size-settings
+    title: 字体大小
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: font-text-size
+    title: 正文大小
+    description: 编辑器与阅读模式的正文基础字号
+    type: variable-number-slider
+    default: 16
+    min: 12
+    max: 24
+    format: px
+    step: 1
+  -
+    id: heading-sizes
+    title: 文内标题（H1-H6）
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: h1-size
+    title: H1 大小
+    type: variable-text
+    default: 2.25em
+  -
+    id: h2-size
+    title: H2 大小
+    type: variable-text
+    default: 1.68em
+  -
+    id: h3-size
+    title: H3 大小
+    type: variable-text
+    default: 1.32em
+  -
+    id: h4-size
+    title: H4 大小
+    type: variable-text
+    default: 1.15em
+  -
+    id: h5-size
+    title: H5 大小
+    type: variable-text
+    default: 1.1em
+  -
+    id: h6-size
+    title: H6 大小
+    type: variable-text
+    default: 1em
+  -
+    id: h1-align
+    title: H1 对齐方式
+    type: class-select
+    allowEmpty: false
+    default: nxl-h1-align-left
+    options:
+      -
+        label: 左对齐
+        value: nxl-h1-align-left
+      -
+        label: 居中
+        value: nxl-h1-align-center
+      -
+        label: 右对齐
+        value: nxl-h1-align-right
+  -
+    id: paragraph-settings
+    title: 段落设置
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: file-line-width
+    title: 内容区域宽度
+    description: 编辑区和阅读区的最大行宽
+    type: variable-number-slider
+    default: 1200
+    min: 300
+    max: 1800
+    format: px
+    step: 1
+  -
+    id: paragraph-line-height
+    title: 行高
+    type: variable-number
+    default: 1.8
+    min: 1.2
+    max: 2.8
+    step: 0.05
+  -
+    id: paragraph-spacing
+    title: 段落间距
+    description: 段落之间的纵向间距（em）
+    type: variable-number-slider
+    default: 1.1
+    min: 0.5
+    max: 2.5
+    step: 0.1
+  -
+    id: paragraph-indent
+    title: 段落首行缩进
+    description: 段落首行自动缩进两个字符
+    type: class-toggle
+    default: true
+  -
+    id: decoration-settings
+    title: ✨ 装饰样式
+    title.zh: ✨ 装饰样式
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: nxl-bg-gradient
+    title: 背景渐变
+    description: 工作区背景显示渐变效果
+    type: class-toggle
+    default: true
+  -
+    id: nxl-content-card
+    title: 页面卡片样式
+    description: 将内容区域包裹在圆角卡片中，带渐变背景和阴影
+    type: class-toggle
+    default: true
+  -
+    id: nxl-heading-underline
+    title: 标题下划线装饰（H1-H4）
+    description: 标题下方显示渐变色装饰线
+    type: class-toggle
+    default: true
+  -
+    id: nxl-code-mac-dots
+    title: 代码块 Mac 风格圆点
+    description: 代码块顶部显示红黄绿三色圆点
+    type: class-toggle
+    default: true
+  -
+    id: nxl-image-center
+    title: 图片居中
+    description: 所有图片默认居中显示
+    type: class-toggle
+    default: true
+  -
+    id: nxl-accent
+    title: 强调色（覆盖配色默认值）
+    type: variable-themed-color
+    format: oklch
+  -
+    id: nxl-inline-code-color
+    title: 内联代码颜色
+    type: variable-themed-color
+    format: oklch
+  -
+    id: nxl-bold-color
+    title: 加粗文字颜色
+    type: variable-themed-color
+    format: oklch
+  -
+    id: nxl-italic-color
+    title: 斜体文字颜色
+    type: variable-themed-color
+    format: oklch
+  -
+    id: nxl-callout-colors
+    title: 💬 Callout 颜色自定义
+    title.zh: 💬 Callout 颜色自定义
+    description: 自定义每种 Callout 类型的颜色（边框和背景底色）
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: callout-info
+    title: Info
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#5B9CB3'
+    default-dark: '#5B9CB3'
+  -
+    id: callout-tip
+    title: Tip
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#579E80'
+    default-dark: '#579E80'
+  -
+    id: callout-success
+    title: Success
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#579E80'
+    default-dark: '#579E80'
+  -
+    id: callout-warning
+    title: Warning
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#CBA658'
+    default-dark: '#CBA658'
+  -
+    id: callout-important
+    title: Important
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#A882C8'
+    default-dark: '#A882C8'
+  -
+    id: callout-error
+    title: Error
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#B84066'
+    default-dark: '#B84066'
+  -
+    id: callout-question
+    title: Question
+    type: variable-themed-color
+    format: rgb-values
+    default-light: '#CBA658'
+    default-dark: '#CBA658'
+*/
+
+/* ==========================================================
+   NXL THEME — Obsidian
+   Multi-palette theme with bloom-stone decorative language
+   ========================================================== */
+
+/* --- Font Face (MiSans) --- */
+@font-face {
+  font-family: "MiSans";
+  src: url("./fonts/MiSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MiSans";
+  src: url("./fonts/MiSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MiSans";
+  src: url("./fonts/MiSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================
+   SHARED NON-COLOR VARIABLES
+   ========================================================== */
+body {
+  --nxl-font-sans: var(--font-family-interface, var(--font-interface-override, "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif));
+  --nxl-font-mono: var(--font-family-mono, ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace);
+  --font-text: var(--font-family-text, var(--font-text-override, "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif));
+  --font-monospace: var(--nxl-font-mono);
+
+  --nxl-space-unit: 8px;
+  --nxl-space-2xs: calc(var(--nxl-space-unit) * 0.5);
+  --nxl-space-xs: calc(var(--nxl-space-unit) * 1);
+  --nxl-space-sm: calc(var(--nxl-space-unit) * 1.5);
+  --nxl-space-md: calc(var(--nxl-space-unit) * 2);
+  --nxl-space-lg: calc(var(--nxl-space-unit) * 3);
+  --nxl-space-xl: calc(var(--nxl-space-unit) * 4);
+  --nxl-space-2xl: calc(var(--nxl-space-unit) * 6);
+  --nxl-space-3xl: calc(var(--nxl-space-unit) * 8);
+
+  --nxl-inline-code-color: var(--text-accent);
+  --nxl-bold-color: var(--text-normal);
+  --nxl-italic-color: var(--text-normal);
+
+  --file-line-width: var(--file-line-width-override, 1200px);
+
+  /* ===== Ink 配色（Blue Topaz 默认风格）===== */
+  --nxl-accent: oklch(55% 0.18 260);
+  --nxl-accent-rgb: 70, 142, 235;
+  --text-accent: var(--nxl-accent);
+
+  --callout-default: var(--nxl-accent-rgb);
+  --callout-info: 91, 156, 179;
+  --callout-tip: 87, 158, 128;
+  --callout-success: 87, 158, 128;
+  --callout-warning: 203, 166, 88;
+  --callout-important: 168, 130, 200;
+  --callout-error: 184, 64, 102;
+  --callout-question: 203, 166, 88;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 14px;
+  --radius-xl: 16px;
+
+  --nxl-code-dot-red: oklch(65% 0.12 25);
+  --nxl-code-dot-yellow: oklch(78% 0.12 85);
+  --nxl-code-dot-green: oklch(72% 0.12 145);
+
+  --nxl-shadow-sm: 0 2px 8px color-mix(in oklch, var(--text-normal), transparent 92%);
+  --nxl-shadow: 0 10px 30px color-mix(in oklch, var(--text-normal), transparent 90%);
+  --nxl-shadow-lg: 0 24px 60px color-mix(in oklch, var(--text-normal), transparent 86%);
+
+  --ribbon-background: var(--background-primary);
+  --side-dock-bg: var(--background-primary);
+  --side-dock-collapse-bg: var(--background-secondary);
+  --nav-item-color: var(--text-normal);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-background-hover: color-mix(in oklch, var(--text-accent), transparent 88%);
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-background-active: color-mix(in oklch, var(--text-accent), transparent 88%);
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+  --text-on-accent: oklch(96% 0.01 60);
+  --text-highlight-bg: color-mix(in oklch, var(--text-accent), transparent 80%);
+  --background-modifier-form-field: var(--background-primary-alt);
+  --background-modifier-message: var(--background-secondary);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================
+   INK 配色 — Blue Topaz 默认风格
+   ========================================================== */
+
+/* Ink — Light（Blue Topaz 默认浅色） */
+body.nxl-palette-ink.theme-light {
+  --nxl-accent: oklch(55% 0.18 260);
+  --nxl-accent-rgb: 70, 142, 235;
+  --text-accent: var(--nxl-accent);
+
+  --background-primary: oklch(100% 0 0);
+  --background-primary-alt: oklch(93% 0.005 0);
+  --background-secondary: oklch(99% 0.002 0);
+  --background-secondary-alt: oklch(96% 0.005 0);
+
+  --text-normal: oklch(15% 0.01 0);
+  --text-muted: oklch(55% 0.01 0);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+
+  --background-modifier-border: color-mix(in oklch, var(--text-normal), transparent 90%);
+  --background-modifier-hover: color-mix(in oklch, var(--nxl-accent), transparent 90%);
+  --background-modifier-active-hover: color-mix(in oklch, var(--nxl-accent), transparent 82%);
+  --text-selection: color-mix(in oklch, var(--nxl-accent), transparent 80%);
+
+  --callout-default: var(--nxl-accent-rgb);
+  --nxl-shadow: 0 10px 30px color-mix(in oklch, var(--text-normal), transparent 92%);
+  --nxl-shadow-sm: 0 2px 8px color-mix(in oklch, var(--text-normal), transparent 94%);
+  --nxl-shadow-lg: 0 24px 60px color-mix(in oklch, var(--text-normal), transparent 90%);
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+}
+
+/* Ink — Dark（Blue Topaz 默认深色） */
+body.nxl-palette-ink.theme-dark {
+  --nxl-accent: oklch(62% 0.16 260);
+  --nxl-accent-rgb: 45, 130, 204;
+  --text-accent: var(--nxl-accent);
+
+  --background-primary: oklch(23% 0.01 0);
+  --background-primary-alt: oklch(37% 0.01 0);
+  --background-secondary: oklch(18% 0.01 0);
+  --background-secondary-alt: oklch(26% 0.01 0);
+
+  --text-normal: oklch(80% 0.01 0);
+  --text-muted: oklch(60% 0.01 0);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+
+  --background-modifier-border: color-mix(in oklch, var(--text-normal), transparent 88%);
+  --background-modifier-hover: color-mix(in oklch, var(--nxl-accent), transparent 85%);
+  --background-modifier-active-hover: color-mix(in oklch, var(--nxl-accent), transparent 75%);
+  --text-selection: color-mix(in oklch, var(--nxl-accent), transparent 75%);
+
+  --callout-default: var(--nxl-accent-rgb);
+  --nxl-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --nxl-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --nxl-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+
+  --nxl-code-dot-red: oklch(65% 0.15 25);
+  --nxl-code-dot-yellow: oklch(78% 0.15 85);
+  --nxl-code-dot-green: oklch(72% 0.15 145);
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+}
+
+/* ==========================================================
+   ORANGE HEART 配色 — 橙红暖色风格
+   ========================================================== */
+
+/* Orange Heart — Light */
+body.nxl-palette-orange-heart.theme-light {
+  --nxl-accent: oklch(62% 0.18 35);
+  --nxl-accent-rgb: 239, 112, 96;
+  --text-accent: var(--nxl-accent);
+
+  --background-primary: oklch(100% 0 0);
+  --background-primary-alt: oklch(96% 0.005 35);
+  --background-secondary: oklch(99% 0.002 30);
+  --background-secondary-alt: oklch(97% 0.005 30);
+
+  --text-normal: oklch(15% 0.01 0);
+  --text-muted: oklch(50% 0.01 0);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+
+  --background-modifier-border: color-mix(in oklch, var(--text-normal), transparent 90%);
+  --background-modifier-hover: color-mix(in oklch, var(--nxl-accent), transparent 90%);
+  --background-modifier-active-hover: color-mix(in oklch, var(--nxl-accent), transparent 82%);
+  --text-selection: rgba(239, 112, 96, 0.2);
+
+  --callout-default: var(--nxl-accent-rgb);
+  --nxl-shadow: 0 10px 30px color-mix(in oklch, var(--text-normal), transparent 92%);
+  --nxl-shadow-sm: 0 2px 8px color-mix(in oklch, var(--text-normal), transparent 94%);
+  --nxl-shadow-lg: 0 24px 60px color-mix(in oklch, var(--text-normal), transparent 90%);
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+}
+
+/* Orange Heart — Dark */
+body.nxl-palette-orange-heart.theme-dark {
+  --nxl-accent: oklch(68% 0.16 35);
+  --nxl-accent-rgb: 255, 140, 120;
+  --text-accent: var(--nxl-accent);
+
+  --background-primary: oklch(22% 0.01 30);
+  --background-primary-alt: oklch(35% 0.01 30);
+  --background-secondary: oklch(18% 0.01 30);
+  --background-secondary-alt: oklch(26% 0.01 30);
+
+  --text-normal: oklch(82% 0.01 0);
+  --text-muted: oklch(60% 0.01 0);
+  --text-faint: color-mix(in oklch, var(--text-muted), transparent 35%);
+
+  --background-modifier-border: color-mix(in oklch, var(--text-normal), transparent 88%);
+  --background-modifier-hover: color-mix(in oklch, var(--nxl-accent), transparent 85%);
+  --background-modifier-active-hover: color-mix(in oklch, var(--nxl-accent), transparent 75%);
+  --text-selection: rgba(255, 140, 120, 0.25);
+
+  --callout-default: var(--nxl-accent-rgb);
+  --nxl-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --nxl-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --nxl-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+
+  --nxl-code-dot-red: oklch(65% 0.15 25);
+  --nxl-code-dot-yellow: oklch(78% 0.15 85);
+  --nxl-code-dot-green: oklch(72% 0.15 145);
+  --divider-color: var(--background-modifier-border);
+  --tab-container-background: var(--background-secondary);
+}
+
+/* Orange Heart 特有形变样式 */
+
+/* H2 标签式装饰 */
+body.nxl-palette-orange-heart .markdown-rendered h2 {
+  border-bottom: 2px solid var(--nxl-accent);
+}
+body.nxl-palette-orange-heart .markdown-rendered h2 a,
+body.nxl-palette-orange-heart .markdown-rendered h2 span,
+body.nxl-palette-orange-heart .HyperMD-header-2 .cm-header {
+  font-weight: bold;
+  background: rgb(var(--nxl-accent-rgb));
+  color: #ffffff;
+  padding: 3px 10px 1px;
+  border-radius: 3px 3px 0 0;
+  display: inline-block;
+}
+
+/* 引用块：暖色左边框 + 浅粉背景 */
+body.nxl-palette-orange-heart .markdown-rendered blockquote {
+  border-left: 3px solid rgb(var(--nxl-accent-rgb));
+  background: #fff9f9;
+  color: #6a737d;
+}
+
+body.nxl-palette-orange-heart.theme-dark .markdown-rendered blockquote {
+  background: rgba(255, 140, 120, 0.08);
+  color: var(--text-muted);
+}
+
+/* 链接颜色 */
+body.nxl-palette-orange-heart .markdown-preview-view a,
+body.nxl-palette-orange-heart .markdown-source-view .cm-hmd-internal-link a,
+body.nxl-palette-orange-heart a.external-link {
+  color: rgb(var(--nxl-accent-rgb));
+}
+
+/* 行内代码 */
+body.nxl-palette-orange-heart .markdown-rendered code,
+body.nxl-palette-orange-heart .cm-s-obsidian span.cm-inline-code {
+  color: rgb(var(--nxl-accent-rgb));
+  background-color: rgba(27, 31, 35, 0.05);
+  border-color: transparent;
+}
+
+/* 光标颜色 */
+body.nxl-palette-orange-heart .cm-cursor,
+body.nxl-palette-orange-heart .CodeMirror-cursor {
+  border-left-color: rgb(var(--nxl-accent-rgb)) !important;
+}
+
+/* ==========================================================
+   CALLBACK & OTHER OBSIDIAN MAPPINGS
+   ========================================================== */
+body {
+  --callout-info: 91, 156, 179;
+  --callout-tip: 87, 158, 128;
+  --callout-success: 87, 158, 128;
+  --callout-warning: 203, 166, 88;
+  --callout-important: 168, 130, 200;
+  --callout-error: 184, 64, 102;
+  --callout-question: 203, 166, 88;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 14px;
+  --radius-xl: 16px;
+
+  --ribbon-background: var(--background-primary);
+  --side-dock-bg: var(--background-primary);
+  --side-dock-collapse-bg: var(--background-secondary);
+  --nav-item-color: var(--text-normal);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-background-hover: color-mix(in oklch, var(--text-accent), transparent 88%);
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-background-active: color-mix(in oklch, var(--text-accent), transparent 88%);
+
+  --text-on-accent: oklch(96% 0.01 60);
+  --text-highlight-bg: color-mix(in oklch, var(--text-accent), transparent 80%);
+}
+
+/* ==========================================================
+   BODY / BACKGROUND GRADIENT
+   (Bloom-stone style)
+   ========================================================== */
+body {
+  font-family: var(--nxl-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Apply theme font to content containers (ref: Blue Topaz) */
+.markdown-preview-view,
+.markdown-preview-view .markdown-rendered,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-source-view {
+  font-family: var(--font-text);
+}
+
+/* Use ::before pseudo-element so the gradient sits behind all content
+   without being overridden by Obsidian's own body/workspace backgrounds */
+body.nxl-bg-gradient::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(1400px circle at 16% 10%, rgba(var(--nxl-accent-rgb), 0.08), transparent 36%),
+    linear-gradient(150deg, rgba(var(--nxl-accent-rgb), 0.05), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 340px),
+    var(--background-primary);
+}
+
+body.theme-dark.nxl-bg-gradient::before {
+  background: radial-gradient(1400px circle at 16% 10%, rgba(var(--nxl-accent-rgb), 0.15), transparent 36%),
+    linear-gradient(150deg, rgba(var(--nxl-accent-rgb), 0.08), transparent 48%),
+    var(--background-primary);
+}
+
+/* ==========================================================
+   CONTENT CARD STYLE
+   (Bloom-stone card style)
+   ========================================================== */
+body.nxl-content-card .markdown-preview-view {
+  margin: 32px auto;
+  max-width: calc(var(--file-line-width) + var(--nxl-space-xl) * 2) !important;
+  padding: var(--nxl-space-2xl) var(--nxl-space-xl) var(--nxl-space-3xl);
+  background: linear-gradient(180deg, color-mix(in oklch, var(--text-accent), transparent 92%), transparent 460px),
+    linear-gradient(120deg, oklch(100% 0 0 / 70%), transparent 70%);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 24px;
+  box-shadow: var(--nxl-shadow-lg);
+}
+
+body.nxl-content-card .markdown-source-view.mod-cm6 .cm-sizer {
+  box-sizing: border-box;
+  max-width: calc(var(--file-line-width) + var(--nxl-space-xl) * 2) !important;
+  margin: 32px auto !important;
+  padding: var(--nxl-space-2xl) var(--nxl-space-xl) var(--nxl-space-3xl);
+  background: linear-gradient(180deg, color-mix(in oklch, var(--text-accent), transparent 92%), transparent 460px),
+    linear-gradient(120deg, oklch(100% 0 0 / 70%), transparent 70%);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 24px;
+  box-shadow: var(--nxl-shadow-lg);
+}
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+::selection {
+  background: color-mix(in oklch, var(--text-accent), transparent 80%);
+}
+
+/* ==========================================================
+   BASE TYPOGRAPHY & LAYOUT
+   ========================================================== */
+
+.markdown-preview-view,
+.markdown-source-view {
+  line-height: var(--paragraph-line-height, 1.8);
+  font-size: var(--font-text-size, 16px);
+}
+
+.markdown-preview-view p,
+.markdown-source-view .cm-line { margin: var(--paragraph-spacing, 1.1em) 0; }
+
+/* Paragraph indent toggle */
+body.paragraph-indent .markdown-preview-view p,
+body.paragraph-indent .markdown-source-view .cm-line:not(.HyperMD-header):not(.HyperMD-codeblock) { text-indent: 2em; }
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+.markdown-preview-view a,
+.markdown-source-view .cm-hmd-internal-link a,
+a.external-link {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+.markdown-preview-view a:hover,
+.markdown-source-view .cm-hmd-internal-link a:hover,
+a.external-link:hover {
+  border-bottom-color: var(--text-accent);
+  transform: translateY(-0.5px);
+}
+
+/* ==========================================================
+   HEADINGS
+   ========================================================== */
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
+.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.HyperMD-header .cm-header {
+  font-weight: 800;
+  line-height: 1.25;
+  margin: var(--nxl-space-2xl) 0 var(--nxl-space-md);
+  letter-spacing: -0.015em;
+  position: relative;
+}
+.markdown-rendered h1, .HyperMD-header-1 .cm-header { font-size: var(--h1-size, 2.25em); letter-spacing: -0.02em; padding-bottom: 0.3em; }
+.markdown-rendered h2, .HyperMD-header-2 .cm-header { font-size: var(--h2-size, 1.68em); padding-bottom: 0.24em; }
+.markdown-rendered h3, .HyperMD-header-3 .cm-header { font-size: var(--h3-size, 1.32em); }
+.markdown-rendered h4, .HyperMD-header-4 .cm-header { font-size: var(--h4-size, 1.15em); }
+
+
+/* Bold & Italic color via Style Settings */
+.markdown-rendered strong, .cm-strong { color: var(--nxl-bold-color, var(--text-normal)); }
+.markdown-rendered em, .cm-em { color: var(--nxl-italic-color, var(--text-normal)); }
+
+/* Heading underline decoration — Blue Topaz style */
+/* H1: dashed border-bottom */
+body.nxl-heading-underline :is(.markdown-preview-view, .markdown-rendered) h1,
+body.nxl-heading-underline .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1.cm-line {
+  border-bottom: 2px dashed rgba(var(--nxl-accent-rgb), 0.45);
+  padding-bottom: 0.3em;
+}
+
+/* H2-H4: solid border-bottom */
+body.nxl-heading-underline :is(.markdown-preview-view, .markdown-rendered) h2,
+body.nxl-heading-underline .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-2.cm-line {
+  border-bottom: 2px solid rgba(var(--nxl-accent-rgb), 0.22);
+  padding-bottom: 0.24em;
+}
+
+body.nxl-heading-underline :is(.markdown-preview-view, .markdown-rendered) h3,
+body.nxl-heading-underline .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-3.cm-line {
+  border-bottom: 1px solid rgba(var(--nxl-accent-rgb), 0.16);
+  padding-bottom: 0.2em;
+}
+
+body.nxl-heading-underline :is(.markdown-preview-view, .markdown-rendered) h4,
+body.nxl-heading-underline .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-4.cm-line {
+  border-bottom: 1px solid rgba(var(--nxl-accent-rgb), 0.12);
+  padding-bottom: 0.18em;
+}
+
+/* H1 text alignment */
+body.nxl-h1-align-center :is(.markdown-preview-view, .markdown-rendered) h1,
+body.nxl-h1-align-center .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1 {
+  text-align: center;
+}
+
+body.nxl-h1-align-right :is(.markdown-preview-view, .markdown-rendered) h1,
+body.nxl-h1-align-right .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1 {
+  text-align: right;
+}
+
+/* ==========================================================
+   HORIZONTAL RULE
+   ========================================================== */
+.markdown-rendered hr {
+  border: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--background-modifier-border), transparent);
+  margin: var(--nxl-space-3xl) 0;
+}
+
+/* ==========================================================
+   BLOCKQUOTE
+   ========================================================== */
+.markdown-rendered blockquote {
+  margin: var(--nxl-space-xl) 0;
+  padding: var(--nxl-space-lg) var(--nxl-space-xl);
+  background: rgba(var(--nxl-accent-rgb), 0.08);
+  border-left: 4px solid var(--text-accent);
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(var(--nxl-accent-rgb), 0.08);
+  overflow: hidden;
+}
+.markdown-rendered blockquote p:first-child { margin-top: 0; }
+.markdown-rendered blockquote p:last-child { margin-bottom: 0; }
+
+/* ==========================================================
+   CALLOUTS
+   ========================================================== */
+.callout {
+  border-radius: 12px; padding: 1em 1em 1em 1.2em; margin: 1.5em 0;
+  border: 1px solid rgba(var(--callout-color), 0.35);
+  transition: all 0.2s ease;
+}
+.callout:hover { border-color: rgba(var(--callout-color), 0.7); }
+.callout-title { gap: 8px; }
+.callout-title-inner { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; opacity: 0.72; }
+.callout-content { margin-top: 0.5em; }
+.callout-content p { margin: 0.4em 0; }
+
+/* Callout variant accent left borders */
+.callout[data-callout="note"] { border-left: 4px solid rgb(var(--callout-info)); }
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] { border-left: 4px solid rgb(var(--callout-important)); }
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] { border-left: 4px solid rgb(var(--callout-warning)); }
+.callout[data-callout="error"],
+.callout[data-callout="bug"],
+.callout[data-callout="fail"] { border-left: 4px solid rgb(var(--callout-error)); }
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] { border-left: 4px solid rgb(var(--callout-success)); }
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] { border-left: 4px solid rgb(var(--callout-question)); }
+
+/* ==========================================================
+   LISTS
+   ========================================================== */
+.markdown-rendered ul, .markdown-rendered ol { padding-left: 1.5em; margin: 1em 0; }
+.markdown-rendered li { margin: 0.5em 0; }
+.markdown-rendered li > ul, .markdown-rendered li > ol { margin: 0.4em 0; }
+.markdown-rendered ul li::marker { color: rgba(var(--nxl-accent-rgb), 0.72); }
+.markdown-rendered ol li::marker { color: rgba(var(--nxl-accent-rgb), 0.72); font-weight: 800; font-variant-numeric: tabular-nums; }
+.task-list-item-checkbox { accent-color: var(--text-accent); }
+
+/* ==========================================================
+   TABLES
+   ========================================================== */
+.markdown-rendered table {
+  border-collapse: separate; border-spacing: 0; width: 100%; margin: 2em 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+.markdown-rendered th, .markdown-rendered td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-right: none; border-left: none;
+}
+.markdown-rendered th { text-align: left; background: var(--background-secondary); font-weight: 600; }
+.markdown-rendered tr:last-child td { border-bottom: 0; }
+.markdown-rendered tr:nth-child(even) td { background: rgba(var(--nxl-accent-rgb), 0.02); }
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper { padding: 0.75em 1em; }
+
+/* ==========================================================
+   INLINE CODE
+   (Bloom-stone style)
+   ========================================================== */
+.markdown-rendered code,
+.cm-s-obsidian span.cm-inline-code {
+  font-family: var(--nxl-font-mono); font-size: 0.88em;
+  padding: 0.2em 0.45em; border-radius: 7px;
+  background: rgba(var(--nxl-accent-rgb), 0.14);
+  color: var(--nxl-inline-code-color, var(--text-accent)); font-weight: 600;
+  border: 1px solid rgba(var(--nxl-accent-rgb), 0.32);
+}
+
+/* ==========================================================
+   FENCED CODE BLOCKS
+   (Bloom-stone style with Mac dots)
+   ========================================================== */
+.markdown-rendered pre {
+  background: var(--background-secondary); color: var(--text-muted);
+  border: 1px solid rgba(var(--nxl-accent-rgb), 0.18);
+  border-radius: 16px; padding: 1.4em; margin: 2em 0;
+  overflow: auto; box-shadow: var(--nxl-shadow);
+  font-family: var(--nxl-font-mono); font-size: 14.5px;
+  line-height: 1.6; position: relative;
+}
+.markdown-rendered pre code { background: transparent; padding: 0; color: var(--text-normal); font-weight: normal; }
+.HyperMD-codeblock { line-height: 1.6; }
+.cm-s-obsidian div.HyperMD-codeblock-bg { background-color: var(--background-secondary); }
+.HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg { border-radius: 16px 16px 0 0; min-height: 32px; }
+.HyperMD-codeblock.HyperMD-codeblock-end.HyperMD-codeblock-end-bg { border-radius: 0 0 16px 16px; }
+
+/* Mac-style window dots (bloom-stone toggle) */
+body.nxl-code-mac-dots .markdown-rendered pre::before {
+  content: ""; position: absolute; top: 14px; left: 14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--nxl-code-dot-red);
+  box-shadow: 18px 0 0 var(--nxl-code-dot-yellow), 36px 0 0 var(--nxl-code-dot-green);
+  z-index: 2;
+}
+body.nxl-code-mac-dots .markdown-rendered pre { padding-top: 3.2em; }
+body.nxl-code-mac-dots .HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg::before {
+  content: ""; position: absolute; top: 14px; left: 14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--nxl-code-dot-red);
+  box-shadow: 18px 0 0 var(--nxl-code-dot-yellow), 36px 0 0 var(--nxl-code-dot-green);
+  z-index: 2;
+}
+body.nxl-code-mac-dots .HyperMD-codeblock.HyperMD-codeblock-begin.HyperMD-codeblock-begin-bg { padding-top: 28px !important; }
+
+/* Code language label */
+.markdown-rendered pre code.language-label {
+  position: absolute; top: 14px; left: 60px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.02em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2px 10px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Code block flair */
+.markdown-source-view.mod-cm6 .code-block-flair {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.markdown-source-view.mod-cm6 .code-block-flair:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================
+   IMAGES
+   ========================================================== */
+.markdown-rendered img {
+  max-width: 100%; height: auto;
+  border-radius: 14px; box-shadow: var(--nxl-shadow);
+  display: block; margin: 1.5em 0;
+}
+
+/* ============================================================
+   图片居中（默认所有图片居中显示，可在 Style Settings 中关闭）
+   ============================================================ */
+
+/* 阅读视图 - 图片居中 */
+body.nxl-image-center .markdown-preview-view .image-embed {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 50% !important;
+}
+body.nxl-image-center .markdown-preview-view .image-embed img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+}
+
+/* 编辑视图 - 图片居中 */
+body.nxl-image-center .markdown-source-view.mod-cm6 .image-embed {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 50% !important;
+}
+body.nxl-image-center .markdown-source-view.mod-cm6 .image-embed img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+}
+
+/* 编辑视图 - #pic_center 标记 */
+body.nxl-image-center .markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="center"] img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/* 编辑视图 - #pic_left 标记 */
+body.nxl-image-center .markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="left"] {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 50% !important;
+}
+body.nxl-image-center .markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="left"] img {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+/* 编辑视图 - #pic_right 标记 */
+body.nxl-image-center .markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="right"] {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    width: 50% !important;
+}
+body.nxl-image-center .markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="right"] img {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* 实时编辑模式 - 图片居左 */
+.markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="left"] {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 50% !important;
+}
+.markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="left"] img {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+/* 实时编辑模式 - 图片居右 */
+.markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="right"] {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    width: 50% !important;
+}
+.markdown-source-view.mod-cm6.is-live-preview .image-embed[src$="right"] img {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* ==========================================================
+   MARK / HIGHLIGHT
+   (Bloom-stone style)
+   ========================================================== */
+.markdown-rendered mark, .cm-s-obsidian .cm-highlight {
+  background: linear-gradient(120deg, rgba(var(--nxl-accent-rgb), 0.25), rgba(var(--nxl-accent-rgb), 0.12));
+  color: inherit; padding: 0.12em 0.26em; border-radius: 9px;
+  border: 1px solid rgba(var(--nxl-accent-rgb), 0.32);
+  box-shadow: 0 10px 26px rgba(var(--nxl-accent-rgb), 0.18);
+}
+.cm-s-obsidian span.cm-formatting-highlight { background: transparent; border: none; box-shadow: none; }
+
+/* ==========================================================
+   UNDERLINE
+   (Bloom-stone style)
+   ========================================================== */
+.markdown-rendered u {
+  text-decoration: none;
+  background-image: linear-gradient(120deg, rgba(var(--nxl-accent-rgb), 0.5), rgba(var(--nxl-accent-rgb), 0.18));
+  background-repeat: no-repeat; background-size: 100% 0.16em;
+  background-position: 0 90%; border-radius: 4px; padding-bottom: 2px;
+}
+
+/* ==========================================================
+   KBD (KEYBOARD)
+   ========================================================== */
+.markdown-rendered kbd {
+  font-family: var(--nxl-font-mono); font-size: 0.85em;
+  padding: 0.2em 0.5em; border: 1px solid var(--background-modifier-border);
+  border-bottom-width: 3px; border-radius: 8px;
+  background: var(--background-primary); color: var(--text-normal); margin: 0 0.2em;
+}
+
+/* ==========================================================
+   FOOTNOTES
+   (Bloom-stone style)
+   ========================================================== */
+.footnote-ref {
+  background: rgba(var(--nxl-accent-rgb), 0.16); color: var(--text-accent);
+  border: 1px solid rgba(var(--nxl-accent-rgb), 0.28); border-radius: 6px;
+  padding: 2px 6px; font-size: 0.85em;
+}
+.footnote-ref a { color: var(--text-accent); }
+.markdown-preview-view .footnotes {
+  margin-top: 3em; padding: 1.2em 1.4em; font-size: 0.9em;
+  color: var(--text-muted); background: rgba(var(--nxl-accent-rgb), 0.06);
+  border: 1px solid rgba(var(--nxl-accent-rgb), 0.18); border-radius: 12px;
+  box-shadow: var(--nxl-shadow-sm);
+}
+.markdown-preview-view .footnotes a {
+  color: var(--text-accent); text-decoration: none;
+  border-bottom: 1px solid rgba(var(--nxl-accent-rgb), 0.3);
+}
+.markdown-preview-view .footnotes a:hover { border-bottom-color: rgba(var(--nxl-accent-rgb), 0.6); }
+
+/* ==========================================================
+   MATH
+   ========================================================== */
+.math-block mjx-container, .math-block {
+  margin: var(--nxl-space-xl) 0; padding: var(--nxl-space-md);
+  background: var(--background-secondary); border-radius: 12px; overflow-x: auto;
+}
+
+/* ==========================================================
+   SIDEBAR / FILE TREE
+   ========================================================== */
+.nav-files-container { padding: 8px; }
+.nav-file-title, .nav-folder-title { border-radius: 8px; transition: background 0.15s ease; }
+.nav-file-title:hover, .nav-folder-title:hover { background: rgba(var(--nxl-accent-rgb), 0.12); }
+.nav-file-title.is-active { background: rgba(var(--nxl-accent-rgb), 0.12); border-left: 3px solid var(--text-accent); }
+.nav-folder-title.is-active { color: var(--text-accent); }
+
+/* ==========================================================
+   TABS
+   ========================================================== */
+.workspace-tab-header-container { background: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); }
+.workspace-tab-header.is-active { background: var(--background-primary); color: var(--text-accent); }
+
+/* ==========================================================
+   TAGS
+   ========================================================== */
+.tag { background: rgba(var(--nxl-accent-rgb), 0.12); color: var(--text-accent); border-radius: 999px; padding: 0.1em 0.6em; font-size: 0.85em; font-weight: 600; border: 1px solid rgba(var(--nxl-accent-rgb), 0.2); }
+.tag:hover { background: rgba(var(--nxl-accent-rgb), 0.2); text-decoration: none; }
+
+/* ==========================================================
+   FRONTMATTER (METADATA)
+   ========================================================== */
+.metadata-container { background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 12px; padding: 1em; margin-bottom: 2em; font-size: 0.9em; }
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in oklch, var(--text-muted), transparent 80%); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: color-mix(in oklch, var(--text-muted), transparent 60%); }
+
+/* ==========================================================
+   GRAPH VIEW
+   ========================================================== */
+.graph-controls { border-radius: 12px; border: 1px solid var(--background-modifier-border); }
+
+/* ==========================================================
+   SEARCH
+   ========================================================== */
+.search-result-file-matched-text { background: rgba(var(--nxl-accent-rgb), 0.12); color: var(--text-normal); border-radius: 4px; padding: 0 2px; }
+.search-result-file-title { font-weight: 600; }
+
+/* ==========================================================
+   INTERACTIVE TRANSITION
+   (Only on content interactive elements, not UI chrome)
+   ========================================================== */
+.markdown-rendered a,
+.cm-hmd-internal-link,
+.cm-underline,
+.tag,
+button:not(.clickable-icon):not(.mod-cta):not(.mod-warning) {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================
+   TOOLTIP — ensure text renders with a reliable fallback font
+   ========================================================== */
+.tooltip {
+  color: var(--text-normal);
+  background: var(--background-modifier-message);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  word-break: keep-all;
+}

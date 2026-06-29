@@ -4,49 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "d88798b13c5ae14f",
+        "id": "014163031feac7a6",
         "type": "tabs",
         "children": [
           {
-            "id": "3aa39b36028349eb",
+            "id": "120986c191ebfe66",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "新建模板工程"
+              "title": "README"
             }
           },
           {
-            "id": "d4c9227e5236fb55",
+            "id": "5002a685b73f2876",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STM32_Obsidian/概念/1、大总结.md",
+                "file": "STM32_Obsidian/概念/寄存器与存储器映射.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1、大总结"
+              "title": "寄存器与存储器映射"
             }
           },
           {
-            "id": "4eee0645cf8918b5",
+            "id": "b4b57927e72082f0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
+                "file": "疑问收集/Q&A.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "使能GPIO时钟为什么只需配置APB2"
+              "title": "Q&A"
             }
           }
         ],
@@ -102,6 +102,16 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "3911ebcaffa35050",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent files"
+            }
           }
         ]
       }
@@ -118,28 +128,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "db94d8c94eef5544",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
-                "followCursor": false,
-                "showSearch": true,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "使能GPIO时钟为什么只需配置APB2 的大纲"
-            }
-          },
-          {
             "id": "56d2f3fda6e158a6",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
-                "collapseAll": true,
+                "file": "#1.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -148,7 +143,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "使能GPIO时钟为什么只需配置APB2 的反向链接列表"
+              "title": "#1 的反向链接列表"
             }
           },
           {
@@ -157,12 +152,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
+                "file": "#1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "使能GPIO时钟为什么只需配置APB2 的出链列表"
+              "title": "#1 的出链列表"
             }
           },
           {
@@ -195,19 +190,21 @@
             }
           },
           {
-            "id": "0d8f16ec384083e9",
+            "id": "db94d8c94eef5544",
             "type": "leaf",
             "state": {
-              "type": "footnotes",
+              "type": "outline",
               "state": {
-                "file": "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md"
+                "file": "#1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
-              "icon": "lucide-file-signature",
-              "title": "脚注"
+              "icon": "lucide-list",
+              "title": "#1 的大纲"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -216,49 +213,40 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "oz-clear-unused-images:Clear Unused Images": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "pdf-plus:PDF++: Toggle auto-copy": false,
-      "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false,
-      "components_free:AI 对话（新标签页）": false,
-      "oz-clear-unused-images:Clear Unused Images": false
+      "bases:新建数据库": false
     }
   },
-  "active": "4eee0645cf8918b5",
+  "active": "874bfc83b5025e81",
   "lastOpenFiles": [
-    "STM32_Obsidian/概念/1、大总结.md",
-    "使能GPIO时钟为什么只需配置APB2,md.md",
-    "STM32_Obsidian/概念/使能GPIO时钟为什么只需配置APB2.md",
-    "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
-    "STM32_Obsidian/概念/STM32总线总结.md",
-    "STM32_Obsidian/概念/启动文件.md",
+    "疑问收集/Q&A.md",
+    "C/数组.md",
+    "C",
     "STM32_Obsidian/概念/寄存器与存储器映射.md",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/system_stm32f10x.__i",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/main.__i",
+    "疑问收集",
+    "STM32_Obsidian/1.新建模板工程/新建模板工程.md",
     "STM32_Obsidian/1.新建模板工程/TempalteProject/TempalteProj.uvguix.25313.25313.tmp",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/TempalteProj.uvprojx.25313.tmp",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/startup_stm32f10x_md._ia",
-    "STM32_Obsidian/概念/寄存器-寄存器映射-存储器映射-内存.md",
-    "STM32_Obsidian/概念/system_stm32f10x系统文件.md",
-    "STM32_Obsidian/概念/assets/Pasted image 20260615233020.png",
-    "STM32_Obsidian/概念/assets/Pasted image 20260615230935.png",
-    "STM32_Obsidian/概念/assets",
-    "STM32_Obsidian/概念/core_cm3内核支持文件.md",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj_Target 1.dep",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj.axf",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/TempalteProj.htm",
-    "STM32_Obsidian/1.新建模板工程/TempalteProject/Listings/TempalteProj.map",
-    "STM32_Obsidian/概念/中断向量表.md",
-    "STM32_Obsidian/概念/stm32f10x.h头文件.md",
-    "Ob语法.md",
-    "Readme.md",
-    "待办清单.md",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/main.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_wwdg.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_usart.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_tim.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_spi.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_sdio.__i",
+    "STM32_Obsidian/1.新建模板工程/TempalteProject/Objects/stm32f10x_rtc.__i",
+    "STM32_Obsidian/概念/1、大总结.md",
+    "STM32_Obsidian/概念/启动文件.md",
+    "图片居中测试.md",
+    "assets/Pasted image 20260624015442.png",
+    "assets/Pasted image 20260624015252.png",
     "README.md",
-    "FOC/常用公式/常用公式.md",
+    "MyTheme-编辑视图卡片宽度问题.md",
+    "assets/Pasted image 20260624012836.png",
+    "assets/Pasted image 20260624010922.png",
+    "新建 Markdown File.md",
     "欢迎.md",
     "#1.md"
   ]
